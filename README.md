@@ -24,14 +24,13 @@ flowchart LR
   subgraph App["iOS app · SwiftUI"]
     APP["SwiftData store"] --> PRACTICE["Adaptive practice engine"]
     APP --> IAP["StoreKit 2 · one-time premium"]
-    APP --> ADS["AdMob + Meta fallback"]
   end
 ```
 
 ## Engineering highlights
 - **AI content pipeline**: extracts official citizenship/residence material from PDFs (`pdfplumber`), chunks it, and uses **Google Gemini** to generate exam-style questions and explanations — finalized into a human-validated question bank rather than trusted blindly.
 - **Adaptive learning** that surfaces previously-missed questions more often.
-- Production iOS: SwiftUI + **SwiftData**, **StoreKit 2** one-time purchase, AdMob with **Meta Audience Network fallback**, privacy-first TelemetryDeck analytics.
+- Production iOS: SwiftUI + **SwiftData**, **StoreKit 2** one-time purchase, privacy-first TelemetryDeck analytics. No ads.
 - Full release operations: localized Danish/English content and promo-code generation.
 
 ## Tech stack
@@ -39,10 +38,14 @@ flowchart LR
 |---|---|
 | App | SwiftUI, SwiftData, StoreKit 2 (iOS 18+) |
 | Content | Python, pdfplumber, Google Gemini |
-| Monetization / analytics | AdMob, Meta Audience Network, TelemetryDeck |
+| Monetization / analytics | StoreKit 2, TelemetryDeck (no ads) |
 
 ## Screenshots
-_Add app screenshots to `docs/screenshots/`._
+<p>
+  <img src="docs/screenshots/1-audiobook.jpg" width="200" alt="Official book as reader and audiobook">
+  <img src="docs/screenshots/2-home.jpg" width="200" alt="Home: exams, weak points and study material">
+  <img src="docs/screenshots/3-progress.jpg" width="200" alt="Progress and mastery statistics">
+</p>
 
 ---
 © 2026 Alen Trgovcevic · AT Productions (CVR 46159640). Source code is private; this repository is a public architecture overview.
